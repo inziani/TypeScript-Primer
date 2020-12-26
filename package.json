@@ -1,0 +1,22 @@
+{
+  "name": "primer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inziani/TypeScript-Primer.git"
+  },
+  "author": "Inziani Robai Valentine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inziani/TypeScript-Primer/issues"
+  },
+  "homepage": "https://github.com/inziani/TypeScript-Primer#readme",
+  "dependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
