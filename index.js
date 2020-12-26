@@ -21,6 +21,15 @@ let firstCity;
 let secondCity = firstCity || 'London';
 console.log(`City: ${secondCity}`);
 
-function sumPrices(){
+function sumPrices(first, second, third = 1975){
+  return first + second + third;
+}
 
+let newTotalPrice = sumPrices(hatPrice, bootsPrice);
+console.log(`New Total: ${newTotalPrice}, ${typeof newTotalPrice}`)
+
+function newSumPrices(...numbers){
+  return numbers.reduce(function(total, val){
+    return total + val
+  }, 0)
 }
