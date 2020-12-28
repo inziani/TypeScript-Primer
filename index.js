@@ -33,3 +33,59 @@ function newSumPrices(...numbers){
     return total + val
   }, 0)
 }
+
+console.log(newSumPrices(1, 2, 3, 4, 5))
+
+// Arrays
+
+let names = ['Sophia', 'Malakai', 'Jendekah'];
+let prices = [];
+prices.push(100)
+prices.push('100')
+prices.push(50.25)
+
+console.log(`First name: ${names[0]}: ${prices[0]}, Price List: ${prices}`);
+
+let combinedArray = [...names, ...prices];
+console.log(combinedArray)
+combinedArray.forEach(element => console.log(`Combined Array Element: ${element}`));
+
+let hat = {
+  name: 'Hat',
+  price: 100
+};
+
+let boots = {
+  name: 'Boots',
+  price: 200
+};
+
+let totalCost = (...numbers) => numbers.reduce((total, val) => total + val)
+
+console.log(`Totals: ${totalCost(1, 1, 1, 1)}`)
+
+let gloves = { 
+  productName: 'Gloves',
+  price: 40
+}
+
+gloves.name = gloves.productName;
+
+console.log(`Cost: ${totalCost(hat.price, boots.price, gloves.price)}`)
+
+let propertyCheck = hat.price || 0;
+let objectAndPropertyCheck = (hat || {}).price || 0;
+
+console.log(`Checks: ${propertyCheck}, ${objectAndPropertyCheck}`);
+
+let otherHat = {...hat,...gloves};
+console.log(`Spread: ${otherHat.name}, ${otherHat.price}`);
+
+let addProperties = {...hat, discounted: true};
+console.log(`Aditional: ${JSON.stringify(addProperties)}`)
+
+let replaceProperties = {...hat, price: 10};
+console.log(`Replaced: ${JSON.stringify(replaceProperties)}`)
+
+let { price, ...someProperties } = hat;
+console.log(`Selected: ${JSON.stringify(someProperties)}`);
