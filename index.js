@@ -128,3 +128,41 @@ let kitchenTotals = (...numbers) => numbers.reduce((total, val) => total + (Numb
 let kitchenSums = kitchenTotals(...kitchenPrices);
 console.log(`Kitchen Totals - ${kitchenSums} : ${typeof kitchenSums}`);
 
+// Spread operator on arrays
+
+let newArray = [...kitchenUtencils, ...kitchenPrices];
+console.log(`New Array ${newArray}`);
+
+newArray.forEach(element => console.log(`New Array elements : ${element}`))
+
+// Objects
+
+let spoon = 
+  {name:'Spoon', price:120};
+
+let pan = 
+{ name: 'Pan', price:200
+};
+
+let bigSpoon = {...spoon};
+
+
+
+objectTotals = kitchenTotals(spoon.price, pan.price)
+console.log(`Object Totals : ${objectTotals}`)
+
+let propertyChecktwo = spoon.price || 0
+let objectAndPropertyChecktwo = (spoon ||{}).price||0;
+
+console.log(`The checks : ${propertyChecktwo} , ${objectAndPropertyChecktwo}`);
+
+console.log(`Spread on objects : ${bigSpoon.name} ${bigSpoon.price}, ${spoon.name} , ${otherHat}`);
+
+let usage = { ...spoon, eating: true}
+console.log(`Added items - ${JSON.stringify(usage)}`);
+
+// Getters and setters
+
+
+
+
