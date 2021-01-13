@@ -89,3 +89,42 @@ console.log(`Replaced: ${JSON.stringify(replaceProperties)}`)
 
 let { price, ...someProperties } = hat;
 console.log(`Selected: ${JSON.stringify(someProperties)}`);
+
+
+//  Arrow functions
+
+let dressPrice = 100;
+console.log(`Dress price: ${dressPrice}`);
+
+let shoesPrice = '100';
+console.log(`Shoes price : ${shoesPrice}`);
+
+function clothPrices(...numbers){
+  return numbers.reduce((total, val) => total + (Number.isNaN(Number(val)) ? 0: Number(val)));
+}
+
+let clothesTotal = clothPrices(dressPrice, shoesPrice);
+console.log(`Total clothes prices : ${clothesTotal} ${typeof clothesTotal}`);
+
+clothesTotal = clothPrices(100, 200, 300);
+console.log(`Second total : ${clothesTotal} ${typeof clothesTotal}`)
+
+clothesTotal = clothPrices(100, 200, undefined, false, 'hello')
+console.log(`Testing Naan total ${clothesTotal} ${typeof clothesTotal}`)
+
+// Working with arrays
+
+let kitchenUtencils = ['Pans', 'Spoons', 'Jugs'];
+let kitchenPrices = [];
+
+kitchenPrices.push(100);
+kitchenPrices.push('100');
+kitchenPrices.push(50.25);
+
+console.log(`First item: ${kitchenUtencils[0]} - ${kitchenPrices[0]}`);
+
+let kitchenTotals = (...numbers) => numbers.reduce((total, val) => total + (Number.isNaN(Number(val)) ? 0 :Number(val)));
+
+let kitchenSums = kitchenTotals(...kitchenPrices);
+console.log(`Kitchen Totals - ${kitchenSums} : ${typeof kitchenSums}`);
+
