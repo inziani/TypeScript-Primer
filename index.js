@@ -62,3 +62,39 @@ console.log(house.toString());
 
 // Inheritance in classes
 
+class TaxedProduct extends Products{
+
+  constructor(name, price, taxRate = 1.16){
+    super(name, price);
+    this.taxRate = taxRate;
+  }
+
+  getPriceIncTax(){
+    return Number(this.price) * this.taxRate;
+  }
+
+  toString(){
+    let chainResult = super.toString();
+    return `${chainResult}, Tax: ${this.getPriceIncTax()}`
+  }
+
+  static process(...products){
+    products.forEach(p => console.log(p.toString()));
+  }
+
+}
+let dress = new TaxedProduct('Maxi', 2000);
+let short = new TaxedProduct('Flat', 3400, 1.20);
+
+console.log(dress.toString());
+console.log(short.toString());
+
+TaxedProduct.process(new TaxedProduct('bag', 160))
+
+console.log(`${dress.process}`)
+
+// Iterators and Generators
+
+
+
+
