@@ -194,7 +194,41 @@ console.log(`Bed prices ${beds.price} , Bed prices inclusive of tax ${beds.price
 
 // Methods
 
+let residence = {
+  name: 'Parklands',
+  _rent: 50000,
+  rentIncTax: 50000 * 1.16,
 
+  set rent(newRent){
+    this._rent = newRent;
+    this.rentIncTax = this._rent * 1.16;
+  },
+
+  get rent(){
+    return this._rent;
+  },
+
+  writeDetails() {
+    console.log(`${this.name}, ${this._rent}, ${this.rentIncTax}`);
+  }
+    // console.log(`${residence.name}, ${residence._rent}, ${residence.rentIncTax}`)
+  
+};
+
+let job = {
+  name: 'TSC',
+  salary: 30000,
+
+  get salaryIncTax(){
+    return Number(this.salary) * 1.30;
+  }
+};
+
+residence.writeDetails();
+residence.rent = 40000;
+residence.writeDetails();
+
+// Understanding this is methods 
 
 
 
