@@ -163,6 +163,43 @@ console.log(`Added items - ${JSON.stringify(usage)}`);
 
 // Getters and setters
 
+let seats = {
+  name: 'Sofa',
+  _price:3000,
+  priceIncTax: 3000 * 1.16,
+
+  set price(newPrice){
+    this._price = newPrice;
+    this.priceIncTax = this.price * 1.20;
+  },
+
+  get price(){
+    return this._price;
+  }
+
+}
+
+let beds = {
+  name: 'kingSize',
+  price: 10000,
+
+  get priceIncTax(){
+    return Number(this.price) * 1.16
+  }
+}
+
+console.log(`Kitchen prices ${seats.price}, Tax Inclusive price ${seats.priceIncTax}`)
+
+console.log(`Bed prices ${beds.price} , Bed prices inclusive of tax ${beds.priceIncTax}`)
+
+// Methods
+
+
+
+
+
+
+
 
 
 
